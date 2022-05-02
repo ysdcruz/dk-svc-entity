@@ -1,0 +1,16 @@
+services:
+  ticket:
+    baseUrl: "http://localhost:3001"
+    graphQLPath: "/graphql"
+  payment:
+    baseUrl: "http://localhost:3002"
+    graphQLPath: "/graphql"
+  entity:
+    baseUrl: "http://localhost:3003"
+    graphQLPath: "/graphql"
+  message:
+    baseUrl: "http://localhost:3004"
+    graphQLPath: "/graphql"
+  user:
+    baseUrl: "http://localhost:3005"
+    graphQLPath: "/graphql"

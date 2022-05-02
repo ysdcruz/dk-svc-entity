@@ -1,0 +1,28 @@
+# https://logging.apache.org/log4j/2.x/manual/appenders.html
+# https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html
+Configuration:
+  Appenders:
+    Console:
+      PatternLayout:
+        # pattern: '%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %c{1}.%M(%F{5}:%L) - %msg%n' # With line number
+        pattern: '%d{yyyy-MM-dd HH:mm:ss.SSS Z a} [%5level] [%10.10t] %40.40c{1} : %msg%n'
+      name: Console
+      target: SYSTEM_OUT
+    RollingFile:
+      PatternLayout:
+        pattern: '%d{yyyy-MM-dd HH:mm:ss.SSS Z a} [%5level] [%10.10t] %40.40c{1} : %msg%n'
+      name: RollingFile
+      fileName: /var/log/devkinetics/microservices/dk-svc-payment.log
+      filePattern: '/var/log/spring/microservices/archive/ticket-webservice-%d{yyyy-MM-dd-hh-mm-ss}.log.gz'
+      Policies:
+        SizeBasedTriggeringPolicy:
+          size: 10MB # KB, MB, GB
+      DefaultRollOverStrategy:
+        max: 30
+        compressionLevel: 7
+  Loggers:
+    Root:
+      AppenderRef:
+      - ref: Console
+      - ref: RollingFile
+      level: info

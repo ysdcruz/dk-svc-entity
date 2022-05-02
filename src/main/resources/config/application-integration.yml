@@ -1,0 +1,7 @@
+integration:
+  serviceConfig:
+    PH-APP:
+#      paymentEngine: "PH"
+#      paymentEngineVersion: "V1"
+#      receiptEngine: "PH"
+#      receiptversion: "V1"

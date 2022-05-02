@@ -1,0 +1,19 @@
+rules:
+  group:
+    PH-ENABLR:
+      mandatoryHeaderFields: "appId"
+      mandatoryFields: "appId"
+      validationRules: "EmailFormatRule, MobileNumberFormatRule"
+      businessRules: ""
+      timeZone: "UTC+8"
+      senderEmail: "wecare@enablr.co"
+      paymentGateways: "DP,PP"
+    PH-SERBISYO:
+      mandatoryHeaderFields: "appuserId, appId"
+      mandatoryFields: "appId"
+      validationRules: "EmailFormatRule, MobileNumberFormatRule"
+      businessRules: ""
+      timeZone: "UTC+8"
+      senderEmail: "wecare@serbisyo.com"
+      paymentGateways: "DP,PP"
+

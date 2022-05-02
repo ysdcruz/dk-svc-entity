@@ -1,0 +1,5 @@
+graphiql:
+  mapping: /graphiql
+  endpoint: /graphql
+  enabled: true
+  pageTitle: GraphQL API Explorer | DevKinetics Developer Guide - Entity Service

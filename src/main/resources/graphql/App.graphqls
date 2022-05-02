@@ -1,0 +1,87 @@
+# App
+type App {
+
+    # App ID
+    pkAppId: ID!
+
+    # App name
+    name: String!
+
+    # App description
+    description: String
+
+    # Email address of app
+    email: String!
+
+    # URL of the app's facebook
+    facebookLink: String
+
+    # URL of the app's twitter
+    twitterLink: String
+
+    # Copyright of app
+    copyright: String
+
+    # App's primary color
+    primaryColor: String
+
+    # App's secondary color
+    secondaryColor: String
+
+    # URL of the app
+    appUrl: String!
+
+    # Paypal web experience profile ID
+    paypalWebProfile: String
+
+    # Redirect URL if payment successful
+    paymentSuccessRedirectUrl: String
+
+    # Redirect URL if payment cancelled
+    paymentCancelledRedirectUrl: String
+
+    # Redirect URL if payment failed
+    paymentFailedRedirectUrl: String
+
+    # Merchant Id
+    merchantId: String
+
+    # Public key
+    publicKey: String
+
+    # Secret key
+    secretKey: String
+
+    # Whether or not the app is active
+    isActive: Boolean
+
+    # List of domains separated by comma
+    domain: String
+
+    # URL of the app's logo
+    logoUrl: String
+
+    # URL of the app's icon
+    iconUrl: String
+
+    # Contact us URL
+    contactUsUrl: String
+
+    # SMTP server for sending emails
+    smtpServer: String
+
+    # SMTP port for sending emails
+    smtpPort: Int
+
+    # SMTP username for sending emails
+    smtpUsername: String
+
+    # SMTP password for sending emails
+    smtpPassword: String
+
+    # Identifies the date and time when the app was created
+    createdAt: String
+
+    # Identifies the date and time when the app was last updated
+    updatedAt: String
+}

@@ -38,10 +38,10 @@ type App {
     payment_success_redirect_url: String
 
     # Redirect URL if payment cancelled
-    paymentCancelledRedirectUrl: String
+    payment_cancelled_redirectUrl: String
 
     # Redirect URL if payment failed
-    paymentFailedRedirectUrl: String
+    payment_failed_redirect_url: String
 
     # Merchant Id
     merchant_id: String

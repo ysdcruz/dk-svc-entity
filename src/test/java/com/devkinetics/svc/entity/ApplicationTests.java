@@ -1,5 +1,6 @@
 package com.devkinetics.svc.entity;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,42 +17,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
         classes = Application.class)
-//@EnableAutoConfiguration(exclude = {
-//        org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration.class,
-//        org.springframework.boot.autoconfigure.security.SecurityFilterAutoConfiguration.class,
-//        org.springframework.boot.autoconfigure.security.FallbackWebSecurityAutoConfiguration.class,
-//        org.springframework.boot.autoconfigure.security.oauth2.OAuth2AutoConfiguration.class
-//})
-@AutoConfigureMockMvc
+@Slf4j
 public class ApplicationTests {
 
-    @LocalServerPort
-    int serverport;
-    TestRestTemplate restTemplate = new TestRestTemplate();
-    HttpHeaders headers = new HttpHeaders();
-
-    @Test
-    public void contextLoads() {
-
-//        CompanyResponse companyResponse = companyEndPoint.findCompany(1L);
-    }
-//
-//    @Test
-//    public void testRetrieveStudentCourse() {
-//        // Need to configure the security before can connect
-//        HttpEntity<String> entity = new HttpEntity<String>(null, headers);
-//
-////        ResponseEntity<String> response = restTemplate.exchange(
-////                createURLWithPort("/v2/entity/company/1"),
-////                HttpMethod.GET, entity, String.class);
-//
-//        ResponseEntity<CompanyResponse> responseEntity = restTemplate.getForEntity(createURLWithPort("/v2/entity/company/1"), CompanyResponse.class);
-//        CompanyResponse companyResponse = responseEntity.getBody();
-//        System.out.println(companyResponse.toString());
-//    }
-//
-//    private String createURLWithPort(String uri) {
-//        return "http://localhost:" + serverport + uri;
-//    }
+    private int definedPort = 3003;
+    private String baseUrl = "http://localhost:" + definedPort + "/";
 
 }

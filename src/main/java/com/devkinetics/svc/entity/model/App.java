@@ -86,8 +86,8 @@ public class App implements Serializable {
     @Column(name = "isActive")
     private Boolean isActive;
 
-    @Column(name = "domain")
-    private String domain;
+    @Column(name = "domains")
+    private String domains;
 
     @Column(name = "logoUrl")
     private String logoUrl;

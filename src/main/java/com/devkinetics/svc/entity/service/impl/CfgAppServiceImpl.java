@@ -71,7 +71,7 @@ public class CfgAppServiceImpl implements CfgAppService {
         CfgAppResponse cfgAppResponse = this.getAppById(app.getPkAppId());
 
         if(cfgAppResponse.getReturnCode() != CodeUtil.RETRIEVE_CFG_APP_SUCCESS)
-            return createUpdateResponse(null, "Null cfgAppEntity", CodeUtil.UPDATE_CFG_APP_ERROR, "error");
+            return createUpdateResponse(null, "cfgAppEntity do not exist", CodeUtil.DO_NOT_EXIST_CFG_APP_ERROR, "error");
 
         DataEnrichment dataEnrichment = new DataEnrichment();
         app = dataEnrichment.enrichCfgAppEntity(app, false);
@@ -105,7 +105,7 @@ public class CfgAppServiceImpl implements CfgAppService {
 
         CfgAppResponse cfgAppResponse = this.getAppById(appId);
         if(cfgAppResponse.getReturnCode() != CodeUtil.RETRIEVE_CFG_APP_SUCCESS)
-            return createUpdateResponse(null, "Null cfgAppEntity", CodeUtil.UPDATE_CFG_APP_ERROR, "error");
+            return createUpdateResponse(null, "cfgAppEntity do not exist", CodeUtil.DO_NOT_EXIST_CFG_APP_ERROR, "error");
 
         try {
             appRepository.deleteById(appId);

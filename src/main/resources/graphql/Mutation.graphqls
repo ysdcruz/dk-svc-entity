@@ -65,7 +65,7 @@ input AppInput {
     isActive: Boolean
 
     # List of domains separated by comma
-    domain: String
+    domains: String
 
     # URL of the app's logo
     logoUrl: String

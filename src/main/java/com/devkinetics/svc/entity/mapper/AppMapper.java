@@ -34,9 +34,9 @@ public class AppMapper {
             appDto.setSmtpPassword(app.getSmtpPassword());
             appDto.setIsActive(app.getIsActive());
 
-            if(app.getDomain() != null) {
-                List<String> domain = Arrays.asList(app.getDomain().split(","));
-                appDto.setDomain(domain);
+            if(app.getDomains() != null) {
+                List<String> domains = Arrays.asList(app.getDomains().split(","));
+                appDto.setDomain(domains);
             }
 
             this.appDto = appDto;

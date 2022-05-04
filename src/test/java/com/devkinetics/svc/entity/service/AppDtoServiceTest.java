@@ -8,6 +8,8 @@ import com.devkinetics.svc.entity.testutil.TestVariable;
 import com.devkinetics.svc.entity.util.CodeUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -21,6 +23,7 @@ import static org.junit.Assert.assertEquals;
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
         classes = Application.class)
 @AutoConfigureMockMvc
+@TestMethodOrder(MethodOrderer.MethodName.class)
 @Slf4j
 public class AppDtoServiceTest {
 
@@ -35,8 +38,7 @@ public class AppDtoServiceTest {
     // NORMAL
 
     @Test
-    public void normalTestCreateUpdateRetrieveCfgAppCase1() {
-
+    public void cfgAppCase1NormalTestCreateRetrieve() {
         app = this.populateCfgApp();
 
         log.info("Create cfgAppEntity with NULL cfgAppId");
@@ -48,6 +50,8 @@ public class AppDtoServiceTest {
                 expectedCreateUpdateResponse.getReturnCode(), actualCreateUpdateResponse.getReturnCode());
         assertEquals("Did not match the expected new pkAppId",
                 expectedCreateUpdateResponse.getId(), actualCreateUpdateResponse.getId());
+
+        app.setMerchantId(TestVariable.EXISTING_CFG_APP_MERCHANT_ID);
 
         log.info("Update cfgAppEntity with EXISTING cfgAppId");
         expectedCreateUpdateResponse = new CreateUpdateResponse();
@@ -71,7 +75,41 @@ public class AppDtoServiceTest {
     }
 
     @Test
-    public void normalTestRetrieveCfgAppCase2() {
+    public void cfgAppCase2ErrorTestCreate() {
+        app = this.populateCfgApp();
+        app.setPkAppId(TestVariable.EXISTING_CFG_APP_ID);
+
+        log.info("Create cfgAppEntity WITH cfgAppId");
+        expectedCreateUpdateResponse = new CreateUpdateResponse();
+        expectedCreateUpdateResponse.setId(TestVariable.EXISTING_CFG_APP_ID);
+        expectedCreateUpdateResponse.setReturnCode(CodeUtil.INVALID_PARAMETER);
+        actualCreateUpdateResponse = cfgAppService.createApp(app);
+        assertEquals("Should NOT successful in creating cfgAppEntity",
+                expectedCreateUpdateResponse.getReturnCode(), actualCreateUpdateResponse.getReturnCode());
+    }
+
+    @Test
+    public void cfgAppCase3ErrorTestRetrieveNull() {
+        log.info("Retrieve cfgAppEntity with NULL cfgAppId");
+        expectedCfgAppResponse = new CfgAppResponse();
+        expectedCfgAppResponse.setReturnCode(CodeUtil.INVALID_PARAMETER);
+        actualCfgAppResponse = cfgAppService.getAppById(null);
+        assertEquals("Should NOT be successful in retrieving cfgAppEntity",
+                expectedCfgAppResponse.getReturnCode(), actualCfgAppResponse.getReturnCode());
+    }
+
+    @Test
+    public void cfgAppCase4ErrorTestRetrieveId() {
+        log.info("Retrieve cfgAppEntity with NON-EXISTING cfgAppId");
+        expectedCfgAppResponse = new CfgAppResponse();
+        expectedCfgAppResponse.setReturnCode(CodeUtil.DO_NOT_EXIST_CFG_APP_ERROR);
+        actualCfgAppResponse = cfgAppService.getAppById(TestVariable.NON_EXISTING_CFG_APP_ID);
+        assertEquals("Should NOT successful in retrieving cfgAppEntity",
+                expectedCfgAppResponse.getReturnCode(), actualCfgAppResponse.getReturnCode());
+    }
+
+    @Test
+    public void cfgAppCase5NormalTestRetrieveMerchant() {
         app = this.populateCfgApp();
         app.setMerchantId(TestVariable.EXISTING_CFG_APP_MERCHANT_ID);
 
@@ -86,20 +124,8 @@ public class AppDtoServiceTest {
                 expectedCfgAppResponse.getApp().getMerchantId(), actualCfgAppResponse.getApp().getMerchantId());
     }
 
-    // ERROR
-
     @Test
-    public void errorTestRetrieveCfgAppCase1() {
-        log.info("Retrieve cfgAppEntity with NULL cfgAppId");
-        expectedCfgAppResponse = new CfgAppResponse();
-        expectedCfgAppResponse.setReturnCode(CodeUtil.INVALID_PARAMETER);
-        actualCfgAppResponse = cfgAppService.getAppById(null);
-        assertEquals("Should NOT be successful in retrieving cfgAppEntity",
-                expectedCfgAppResponse.getReturnCode(), actualCfgAppResponse.getReturnCode());
-    }
-
-    @Test
-    public void errorTestRetrieveCfgAppCase2() {
+    public void cfgAppCase6ErrorTestRetrieveMerchant() {
         log.info("Retrieve cfgAppEntity with NON-EXISTING merchantId");
         expectedCfgAppResponse = new CfgAppResponse();
         expectedCfgAppResponse.setReturnCode(CodeUtil.DO_NOT_EXIST_CFG_APP_ERROR);
@@ -108,13 +134,23 @@ public class AppDtoServiceTest {
                 expectedCfgAppResponse.getReturnCode(), actualCfgAppResponse.getReturnCode());
     }
 
+    @Test
+    public void cfgAppCase8NormalTestDelete() {
+        log.info("Delete cfgAppEntity with EXISTING pkAppId");
+        expectedCreateUpdateResponse = new CreateUpdateResponse();
+        expectedCreateUpdateResponse.setReturnCode(CodeUtil.DELETE_CFG_APP_SUCCESS);
+        actualCreateUpdateResponse = cfgAppService.deleteApp(TestVariable.EXISTING_CFG_APP_ID);
+        assertEquals("Should be be successful in deleting cfgAppEntity",
+                expectedCreateUpdateResponse.getReturnCode(), actualCreateUpdateResponse.getReturnCode());
+    }
+
     private App populateCfgApp() {
         app = new App();
         app.setName("Sports Kunekk");
         app.setDescription("The app, the myth, and the legend");
         app.setEmail("sports@kunekk.com");
         app.setAppUrl("https://demo.tickets.enablr.co/merchant/starcity/purchase-summary/");
-        app.setMerchantId("sportskunekk");
+        app.setMerchantId("trytry");
         return app;
     }
 }

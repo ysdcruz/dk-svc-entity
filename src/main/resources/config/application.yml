@@ -4,6 +4,7 @@ spring:
     description:
   profiles:
     include: >
+      db,
       gateway,
       graphql
   #  cloud:

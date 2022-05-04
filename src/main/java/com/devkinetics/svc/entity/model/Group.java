@@ -23,7 +23,7 @@ public class Group implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "pkGroupId")
+    @Column(name = "pk_group_id")
     private Long pkGroupId;
 
     @NotNull
@@ -36,13 +36,13 @@ public class Group implements Serializable {
     @Column(name = "image")
     private String image;
 
-    @Column(name = "coverPhoto")
+    @Column(name = "cover_photo")
     private String coverPhoto;
 
-    @Column(name = "dialingCode")
+    @Column(name = "dialing_code")
     private String dialingCode;
 
-    @Column(name = "contactNumber")
+    @Column(name = "contact_number")
     private String contactNumber;
 
     @Column(name = "latitude")
@@ -54,39 +54,39 @@ public class Group implements Serializable {
     @Column(name = "currency")
     private String currency;
 
-    @Column(name = "isCommunity")
+    @Column(name = "is_community")
     private Boolean isCommunity;
 
-    @Column(name = "isActive")
+    @Column(name = "is_active")
     private Boolean isActive;
 
     @NotNull
-    @Column(name = "paymentGateway1")
+    @Column(name = "payment_gateway_1")
     private Boolean paymentGateway1;
 
     @NotNull
-    @Column(name = "paymentGateway2")
+    @Column(name = "payment_gateway_2")
     private Boolean paymentGateway2;
 
     @NotNull
-    @Column(name = "paymentGateway3")
+    @Column(name = "payment_gateway_3")
     private Boolean paymentGateway3;
 
     @NotNull
-    @Column(name = "paymentGateway4")
+    @Column(name = "payment_gateway_4")
     private Boolean paymentGateway4;
 
     @NotNull
-    @Column(name = "paymentGateway5")
+    @Column(name = "payment_gateway_5")
     private Boolean paymentGateway5;
 
     @NotNull
-    @Column(name = "paymentDirectBankTransferCash")
+    @Column(name = "payment_direct_bank_transfer_cash")
     private Boolean paymentDirectBankTransferCash;
 
-    @Column(name = "paymentGateway1MinimumRegistrationFee")
+    @Column(name = "payment_gateway_1_minimum_registration_fee")
     private Double paymentGateway1MinimumRegistrationFee;
 
-    @Column(name = "paymentDirectBankTransferCashMinRegistrationFee")
+    @Column(name = "payment_direct_bank_transfer_cash_min_registration_fee")
     private Double paymentDirectBankTransferCashMinRegistrationFee;
 }

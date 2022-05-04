@@ -1,7 +1,7 @@
 INSERT
 INTO
   cfg_app
-  (name, description, email, facebookLink, twitterLink, copyright, primaryColor, secondaryColor, appUrl, paypalWebProfile, paymentSuccessRedirectUrl, paymentCancelledRedirectUrl, paymentFailedRedirectUrl, merchantId, publicKey, secretKey, isActive, domains, logoUrl, iconUrl, contactUsUrl, smtpServer, smtpPort, smtpUsername, smtpPassword, createdAt, updatedAt)
+  (name, description, email, facebook_link, twitter_link, copyright, primary_color, secondary_color, app_url, paypal_web_profile, payment_success_redirect_url, payment_cancelled_redirect_url, payment_failed_redirect_url, merchant_id, public_key, secret_key, is_active, domains, logo_url, icon_url, contact_us_url, smtp_server, smtp_port, smtp_username, smtp_password, created_at, updated_at)
 VALUES
   ('Sports Kunekk', 'The app, the myth, and the legend', 'sports@kunekk.com', 'https://www.facebook.com/sportskunekk/', NULL, '&copy; 2018 Sports Kunekk. All rights reserved.', NULL, NULL, 'https://demo.tickets.enablr.co/merchant/starcity/purchase-summary/', 'XP-BMQA-3ZCW-BW68-8HYK', NULL, NULL, NULL, 'sportskunekk', NULL, NULL, TRUE, 'staging.tickets.splashisland.ph,staging.transport.splashisland.ph', NULL, 'https://staging.tickets.splashisland.ph/assets/img/splash-island-favicon.png', NULL, 'smtp.zoho.com', 465, 'infostaging@splashisland.ph', 'q57A3DbXHaLp', NOW(), NOW()),
   ('Splash Island Spa & Resort', 'The biggest waterpark on the Philippines', 'info@splashisland.ph', 'https://www.facebook.com/splashisland/', NULL, '&copy; 2018 Splash Island Spa & Resort', NULL, NULL, 'https://staging.tickets.splashisland.ph/purchase-summary/', 'XP-LT28-XTP8-JEGK-F6K6', NULL, NULL, NULL, 'splashisland', NULL, NULL, TRUE, 'staging.tickets.splashisland.ph,staging.transport.splashisland.ph', 'https://cdn.devkinetics.com/splash-island-logo-green-blue-300x300px.png', 'https://staging.tickets.splashisland.ph/assets/img/splash-island-favicon.png', NULL, 'smtp.zoho.com', 465, 'infostaging@splashisland.ph', 'q57A3DbXHaLp', NOW(), NOW()),
@@ -11,6 +11,6 @@ VALUES
 INSERT
 INTO
   cfg_group
-  (name, description, image, coverPhoto, dialingCode, contactNumber, latitude, longitude, currency, isCommunity, isActive, paymentGateway1, paymentGateway2, paymentGateway3, paymentGateway4, paymentGateway5, paymentDirectBankTransferCash, paymentGateway1MinimumRegistrationFee, paymentDirectBankTransferCashMinRegistrationFee)
+  (name, description, image, cover_photo, dialing_code, contact_number, latitude, longitude, currency, is_community, is_active, payment_gateway_1, payment_gateway_2, payment_gateway_3, payment_gateway_4, payment_gateway_5, payment_direct_bank_transfer_cash, payment_gateway_1_minimum_registration_fee, payment_direct_bank_transfer_cash_min_registration_fee)
 VALUES
   ('DevKinetics Inc.', '...', 'https://image.com/124.png', 'https://image.com/124.png', NULL, NULL, 123.0, 123.0, NULL, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, 1, 1);

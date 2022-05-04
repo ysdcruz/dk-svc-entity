@@ -27,7 +27,7 @@ public class App implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "pkAppId")
+    @Column(name = "pk_app_id")
     private Long pkAppId;
 
     @NotNull
@@ -42,81 +42,81 @@ public class App implements Serializable {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "facebookLink")
+    @Column(name = "facebook_link")
     private String facebookLink;
 
-    @Column(name = "twitterLink")
+    @Column(name = "twitter_link")
     private String twitterLink;
 
     @Column(name = "copyright")
     private String copyright;
 
-    @Column(name = "primaryColor")
+    @Column(name = "primary_color")
     private String primaryColor;
 
-    @Column(name = "secondaryColor")
+    @Column(name = "secondary_color")
     private String secondaryColor;
 
     @NotNull
-    @Column(name = "appUrl")
+    @Column(name = "app_url")
     private String appUrl;
 
     //    @JsonIgnore
-    @Column(name = "paypalWebProfile")
+    @Column(name = "paypal_web_profile")
     private String paypalWebProfile;
 
-    @Column(name = "paymentSuccessRedirectUrl")
+    @Column(name = "payment_success_redirect_url")
     private String paymentSuccessRedirectUrl;
 
-    @Column(name = "paymentCancelledRedirectUrl")
+    @Column(name = "payment_cancelled_redirect_url")
     private String paymentCancelledRedirectUrl;
 
-    @Column(name = "paymentFailedRedirectUrl")
+    @Column(name = "payment_failed_redirect_url")
     private String paymentFailedRedirectUrl;
 
-    @Column(name = "merchantId")
+    @Column(name = "merchant_id")
     private String merchantId;
 
-    @Column(name = "publicKey")
+    @Column(name = "public_key")
     private String publicKey;
 
-    @Column(name = "secretKey")
+    @Column(name = "secret_key")
     private String secretKey;
 
-    @Column(name = "isActive")
+    @Column(name = "is_active")
     private Boolean isActive;
 
     @Column(name = "domains")
     private String domains;
 
-    @Column(name = "logoUrl")
+    @Column(name = "logo_url")
     private String logoUrl;
 
-    @Column(name = "iconUrl")
+    @Column(name = "icon_url")
     private String iconUrl;
 
-    @Column(name = "contactUsUrl")
+    @Column(name = "contact_us_url")
     private String contactUsUrl;
 
-    @Column(name = "smtpServer")
+    @Column(name = "smtp_server")
     private String smtpServer;
 
-    @Column(name = "smtpPort")
+    @Column(name = "smtp_port")
     private Integer smtpPort;
 
-    @Column(name = "smtpUsername")
+    @Column(name = "smtp_username")
     private String smtpUsername;
 
-    @Column(name = "smtpPassword")
+    @Column(name = "smtp_password")
     private String smtpPassword;
 
     @NotNull
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ", timezone = "Asia/Manila")
-    @Column(name = "createdAt")
+    @Column(name = "created_at")
     private Date createdAt;
 
     @NotNull
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ", timezone = "Asia/Manila")
-    @Column(name = "updatedAt")
+    @Column(name = "updated_at")
     private Date updatedAt;
 }

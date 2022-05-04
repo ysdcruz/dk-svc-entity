@@ -2,7 +2,7 @@
 type App {
 
     # App ID
-    pkAppId: ID!
+    pk_app_id: ID!
 
     # App name
     name: String!
@@ -14,28 +14,28 @@ type App {
     email: String!
 
     # URL of the app's facebook
-    facebookLink: String
+    facebook_link: String
 
     # URL of the app's twitter
-    twitterLink: String
+    twitter_link: String
 
     # Copyright of app
     copyright: String
 
     # App's primary color
-    primaryColor: String
+    primary_color: String
 
     # App's secondary color
-    secondaryColor: String
+    secondary_color: String
 
     # URL of the app
-    appUrl: String!
+    app_url: String!
 
     # Paypal web experience profile ID
-    paypalWebProfile: String
+    paypal_web_profile: String
 
     # Redirect URL if payment successful
-    paymentSuccessRedirectUrl: String
+    payment_success_redirect_url: String
 
     # Redirect URL if payment cancelled
     paymentCancelledRedirectUrl: String
@@ -44,44 +44,44 @@ type App {
     paymentFailedRedirectUrl: String
 
     # Merchant Id
-    merchantId: String
+    merchant_id: String
 
     # Public key
-    publicKey: String
+    public_key: String
 
     # Secret key
-    secretKey: String
+    secret_key: String
 
     # Whether or not the app is active
-    isActive: Boolean
+    is_active: Boolean
 
     # List of domains separated by comma
     domains: String
 
     # URL of the app's logo
-    logoUrl: String
+    logo_url: String
 
     # URL of the app's icon
-    iconUrl: String
+    icon_url: String
 
     # Contact us URL
-    contactUsUrl: String
+    contact_us_url: String
 
     # SMTP server for sending emails
-    smtpServer: String
+    smtp_server: String
 
     # SMTP port for sending emails
-    smtpPort: Int
+    smtp_port: Int
 
     # SMTP username for sending emails
-    smtpUsername: String
+    smtp_username: String
 
     # SMTP password for sending emails
-    smtpPassword: String
+    smtp_password: String
 
     # Identifies the date and time when the app was created
-    createdAt: String
+    created_at: String
 
     # Identifies the date and time when the app was last updated
-    updatedAt: String
+    updated_at: String
 }

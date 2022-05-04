@@ -2,12 +2,12 @@
 type Mutation {
 
     createApp(input: AppInput!) : App
-    updateApp(pkAppId: ID!, input: AppInput!) : App
-    deleteApp(pkAppId: ID!) : Boolean
+    updateApp(pk_app_id: ID!, input: AppInput!) : App
+    deleteApp(pk_app_id: ID!) : Boolean
 
     createGroup(input: GroupInput!) : Group
-    updateGroup(pkGroupId: ID!, input: GroupInput!) : Group
-    deleteGroup(pkGroupId: ID!) : Boolean
+    updateGroup(pk_group_id: ID!, input: GroupInput!) : Group
+    deleteGroup(pk_group_id: ID!) : Boolean
 
 }
 
@@ -23,76 +23,76 @@ input AppInput {
     email: String!
 
     # URL of the app's facebook
-    facebookLink: String
+    facebook_link: String
 
     # URL of the app's twitter
-    twitterLink: String
+    twitter_link: String
 
     # Copyright of app
     copyright: String
 
     # App's primary color
-    primaryColor: String
+    primary_color: String
 
     # App's secondary color
-    secondaryColor: String
+    secondary_color: String
 
     # URL of the app
-    appUrl: String!
+    app_url: String!
 
     # Paypal web experience profile ID
-    paypalWebProfile: String
+    paypal_web_profile: String
 
     # Redirect URL if payment successful
-    paymentSuccessRedirectUrl: String
+    payment_success_redirect_url: String
 
     # Redirect URL if payment cancelled
-    paymentCancelledRedirectUrl: String
+    payment_cancelled_redirect_url: String
 
     # Redirect URL if payment failed
-    paymentFailedRedirectUrl: String
+    payment_failed_redirect_url: String
 
     # Merchant Id
-    merchantId: String
+    merchant_id: String
 
     # Public key
-    publicKey: String
+    public_key: String
 
     # Secret key
-    secretKey: String
+    secret_key: String
 
     # Whether or not the app is active
-    isActive: Boolean
+    is_active: Boolean
 
     # List of domains separated by comma
     domains: String
 
     # URL of the app's logo
-    logoUrl: String
+    logo_url: String
 
     # URL of the app's icon
-    iconUrl: String
+    icon_url: String
 
     # Contact us URL
-    contactUsUrl: String
+    contact_us_url: String
 
     # SMTP server for sending emails
-    smtpServer: String
+    smtp_server: String
 
     # SMTP port for sending emails
-    smtpPort: Int
+    smtp_port: Int
 
     # SMTP username for sending emails
-    smtpUsername: String
+    smtp_username: String
 
-    # SMTP password for sending emails
+    # smtp_password password for sending emails
     smtpPassword: String
 
     # Identifies the date and time when the app was created
-    createdAt: String
+    created_at: String
 
     # Identifies the date and time when the app was last updated
-    updatedAt: String
+    updated_at: String
 }
 
 input GroupInput {
@@ -107,13 +107,13 @@ input GroupInput {
     image: String
 
     # URL of the group's cover photo
-    coverPhoto: String
+    cover_photo: String
 
     # Group's dialing code
-    dialingCode: String
+    dialing_code: String
 
     # Contact number of the group
-    contactNumber: String
+    contact_number: String
 
     # Group's latitude
     latitude: Float
@@ -125,32 +125,32 @@ input GroupInput {
     currency: String
 
     # Whether or not the group is a community
-    isCommunity: Boolean
+    is_community: Boolean
 
     # Whether or not the group is active
-    isActive: Boolean
+    is_active: Boolean
 
     # Boolean for payment gateway 1
-    paymentGateway1: Boolean!
+    payment_gateway_1: Boolean!
 
     # Boolean for payment gateway 2
-    paymentGateway2: Boolean!
+    payment_gateway_2: Boolean!
 
     # Boolean for payment gateway 3
-    paymentGateway3: Boolean!
+    payment_gateway_3: Boolean!
 
     # Boolean for payment gateway 4
-    paymentGateway4: Boolean!
+    payment_gateway_4: Boolean!
 
     # Boolean for payment gateway 5
-    paymentGateway5: Boolean!
+    payment_gateway_5: Boolean!
 
     # Boolean for direct bank transfer
-    paymentDirectBankTransferCash: Boolean!
+    payment_direct_bank_transfer_cash: Boolean!
 
     # Minimum registration fee for payment gateway 1
-    paymentGateway1MinimumRegistrationFee: Float
+    payment_gateway_1_minimum_registration_fee: Float
 
     # Minimum registration fee for direct bank transfer
-    paymentDirectBankTransferCashMinRegistrationFee: Float
+    payment_direct_bank_transfer_cash_min_registration_fee: Float
 }

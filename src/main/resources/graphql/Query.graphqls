@@ -7,10 +7,10 @@ type Query {
     app(
 
         # ID of the object
-        pkAppId: ID,
+        pk_app_id: ID,
 
         # Get app by merchant ID
-        merchantId: String
+        merchant_id: String
 
     ): App
 
@@ -23,7 +23,7 @@ type Query {
     group(
 
         # ID of the object.
-        pkGroupId: ID!
+        pk_group_id: ID!
 
     ): Group
 

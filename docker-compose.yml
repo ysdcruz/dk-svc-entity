@@ -1,0 +1,18 @@
+version: '3'
+services:
+  server:
+    container_name: entity-server
+    image: docker-svc-entity:latest
+    environment:
+      SPRING_APPLICATION_JSON: >
+        {
+          "db": {
+            "h2": true,
+            "mysql": false,
+            "schema": true,
+            "seed": true,
+            "populate": true
+          }
+        }
+    ports:
+      - 3003:3003

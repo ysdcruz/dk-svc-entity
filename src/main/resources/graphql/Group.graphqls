@@ -2,7 +2,7 @@
 type Group {
 
     # Group ID
-    pk_group_id: ID!
+    pkGroupId: ID!
 
     # Group name
     name: String!
@@ -14,13 +14,13 @@ type Group {
     image: String
 
     # URL of the group's cover photo
-    cover_photo: String
+    coverPhoto: String
 
     # Group's dialing code
-    dialing_code: String
+    dialingCode: String
 
     # Contact number of the group
-    contact_number: String
+    contactNumber: String
 
     # Group's latitude
     latitude: Float
@@ -32,32 +32,32 @@ type Group {
     currency: String
 
     # Whether or not the group is a community
-    is_community: Boolean
+    isCommunity: Boolean
 
     # Whether or not the group is active
-    is_active: Boolean
+    isActive: Boolean
 
     # Boolean for payment gateway 1
-    payment_gateway_1: Boolean!
+    paymentGateway1: Boolean!
 
     # Boolean for payment gateway 2
-    payment_gateway_2: Boolean!
+    paymentGateway2: Boolean!
 
     # Boolean for payment gateway 3
-    payment_gateway_3: Boolean!
+    paymentGateway3: Boolean!
 
     # Boolean for payment gateway 4
-    payment_gateway_4: Boolean!
+    paymentGateway4: Boolean!
 
     # Boolean for payment gateway 5
-    payment_gateway_5: Boolean!
+    paymentGateway5: Boolean!
 
     # Boolean for direct bank transfer
-    payment_direct_bank_transfer_cash: Boolean!
+    paymentDirectBankTransferCash: Boolean!
 
     # Minimum registration fee for payment gateway 1
-    payment_gateway_1_minimum_registration_fee: Float
+    paymentGateway1MinimumRegistrationFee: Float
 
     # Minimum registration fee for direct bank transfer
-    payment_direct_bank_transfer_cash_min_registration_fee: Float
+    paymentDirectBankTransferCashMinRegistrationFee: Float
 }

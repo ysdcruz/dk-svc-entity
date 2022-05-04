@@ -6,8 +6,8 @@ type Mutation {
     deleteApp(pk_app_id: ID!) : Boolean
 
     createGroup(input: GroupInput!) : Group
-    updateGroup(pk_group_id: ID!, input: GroupInput!) : Group
-    deleteGroup(pk_group_id: ID!) : Boolean
+    updateGroup(pkGroupId: ID!, input: GroupInput!) : Group
+    deleteGroup(pkGroupId: ID!) : Boolean
 
 }
 
@@ -23,76 +23,76 @@ input AppInput {
     email: String!
 
     # URL of the app's facebook
-    facebook_link: String
+    facebookLink: String
 
     # URL of the app's twitter
-    twitter_link: String
+    twitterLink: String
 
     # Copyright of app
     copyright: String
 
     # App's primary color
-    primary_color: String
+    primaryColor: String
 
     # App's secondary color
-    secondary_color: String
+    secondaryColor: String
 
     # URL of the app
-    app_url: String!
+    appUrl: String!
 
     # Paypal web experience profile ID
-    paypal_web_profile: String
+    paypalWebProfile: String
 
     # Redirect URL if payment successful
-    payment_success_redirect_url: String
+    paymentSuccessRedirectUrl: String
 
     # Redirect URL if payment cancelled
-    payment_cancelled_redirect_url: String
+    paymentCancelledRedirectUrl: String
 
     # Redirect URL if payment failed
-    payment_failed_redirect_url: String
+    paymentFailedRedirectUrl: String
 
     # Merchant Id
-    merchant_id: String
+    merchantId: String
 
     # Public key
-    public_key: String
+    publicKey: String
 
     # Secret key
-    secret_key: String
+    secretKey: String
 
     # Whether or not the app is active
-    is_active: Boolean
+    isActive: Boolean
 
     # List of domains separated by comma
     domains: String
 
     # URL of the app's logo
-    logo_url: String
+    logoUrl: String
 
     # URL of the app's icon
-    icon_url: String
+    iconUrl: String
 
     # Contact us URL
-    contact_us_url: String
+    contactUsUrl: String
 
     # SMTP server for sending emails
-    smtp_server: String
+    smtpServer: String
 
     # SMTP port for sending emails
-    smtp_port: Int
+    smtpPort: Int
 
     # SMTP username for sending emails
-    smtp_username: String
+    smtpUsername: String
 
     # smtp_password password for sending emails
     smtpPassword: String
 
     # Identifies the date and time when the app was created
-    created_at: String
+    createdAt: String
 
     # Identifies the date and time when the app was last updated
-    updated_at: String
+    updatedAt: String
 }
 
 input GroupInput {
@@ -107,13 +107,13 @@ input GroupInput {
     image: String
 
     # URL of the group's cover photo
-    cover_photo: String
+    coverPhoto: String
 
     # Group's dialing code
-    dialing_code: String
+    dialingCode: String
 
     # Contact number of the group
-    contact_number: String
+    contactNumber: String
 
     # Group's latitude
     latitude: Float
@@ -125,32 +125,32 @@ input GroupInput {
     currency: String
 
     # Whether or not the group is a community
-    is_community: Boolean
+    isCommunity: Boolean
 
     # Whether or not the group is active
-    is_active: Boolean
+    isActive: Boolean
 
     # Boolean for payment gateway 1
-    payment_gateway_1: Boolean!
+    paymentGateway1: Boolean!
 
     # Boolean for payment gateway 2
-    payment_gateway_2: Boolean!
+    paymentGateway2: Boolean!
 
     # Boolean for payment gateway 3
-    payment_gateway_3: Boolean!
+    paymentGateway3: Boolean!
 
     # Boolean for payment gateway 4
-    payment_gateway_4: Boolean!
+    paymentGateway4: Boolean!
 
     # Boolean for payment gateway 5
-    payment_gateway_5: Boolean!
+    paymentGateway5: Boolean!
 
     # Boolean for direct bank transfer
-    payment_direct_bank_transfer_cash: Boolean!
+    paymentDirectBankTransferCash: Boolean!
 
     # Minimum registration fee for payment gateway 1
-    payment_gateway_1_minimum_registration_fee: Float
+    paymentGateway1MinimumRegistrationFee: Float
 
     # Minimum registration fee for direct bank transfer
-    payment_direct_bank_transfer_cash_min_registration_fee: Float
+    paymentDirectBankTransferCashMinRegistrationFee: Float
 }

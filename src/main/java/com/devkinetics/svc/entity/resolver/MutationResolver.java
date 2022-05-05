@@ -82,6 +82,8 @@ public class MutationResolver implements GraphQLMutationResolver {
             throw new ResourceNotFoundException("cfgAppEntity do not exist");
         }
 
+        app.setPkAppId(appId);
+
         DataEnrichment dataEnrichment = new DataEnrichment();
         app = dataEnrichment.enrichCfgAppEntity(app, false);
 
@@ -176,6 +178,8 @@ public class MutationResolver implements GraphQLMutationResolver {
         }
 
         Group existGroup = groupRepository.findById(groupId).orElse(null);
+
+        group.setPkGroupId(groupId);
 
         if(existGroup == null) {
             createUpdateResponse("cfgGroupEntity do not exist", CodeUtil.RETRIEVE_CFG_GROUP_ERROR, "error");

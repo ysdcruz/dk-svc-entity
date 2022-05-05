@@ -22,7 +22,7 @@ public class GroupMapper {
             groupDto.setImage(group.getImage());
             groupDto.setCoverPhoto(group.getCoverPhoto());
             groupDto.setDialingCode(group.getDialingCode());
-            groupDto.setContactNumber(group.getContactNumber());
+            groupDto.setContactDetailsForm(group.getContactDetailsForm());
             groupDto.setLatitude(group.getLatitude());
             groupDto.setLongitude(group.getLongitude());
             groupDto.setCurrency(group.getCurrency());

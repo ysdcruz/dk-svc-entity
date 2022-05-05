@@ -2,8 +2,8 @@
 type Mutation {
 
     createApp(input: AppInput!) : App
-    updateApp(pk_app_id: ID!, input: AppInput!) : App
-    deleteApp(pk_app_id: ID!) : Boolean
+    updateApp(pkAppId: ID!, input: AppInput!) : App
+    deleteApp(pkAppId: ID!) : Boolean
 
     createGroup(input: GroupInput!) : Group
     updateGroup(pkGroupId: ID!, input: GroupInput!) : Group
@@ -112,8 +112,8 @@ input GroupInput {
     # Group's dialing code
     dialingCode: String
 
-    # Contact number of the group
-    contactNumber: String
+    # Contact details of the group
+    contactDetailsForm: Int
 
     # Group's latitude
     latitude: Float

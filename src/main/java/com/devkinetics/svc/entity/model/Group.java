@@ -42,8 +42,8 @@ public class Group implements Serializable {
     @Column(name = "dialing_code")
     private String dialingCode;
 
-    @Column(name = "contact_number")
-    private String contactNumber;
+    @Column(name = "contact_details_form")
+    private Integer contactDetailsForm;
 
     @Column(name = "latitude")
     private Double latitude;

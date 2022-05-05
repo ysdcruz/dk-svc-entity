@@ -19,8 +19,8 @@ type Group {
     # Group's dialing code
     dialingCode: String
 
-    # Contact number of the group
-    contactNumber: String
+    # Contact details of the group
+    contactDetailsForm: Int
 
     # Group's latitude
     latitude: Float

@@ -110,7 +110,6 @@ public class App implements Serializable {
     @Column(name = "smtp_password")
     private String smtpPassword;
 
-    @NotNull
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ", timezone = "Asia/Manila")
     @Column(name = "created_at")
     private Date createdAt;

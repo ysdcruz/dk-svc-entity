@@ -12,7 +12,7 @@ public class GroupDto {
     private String image;
     private String coverPhoto;
     private String dialingCode;
-    private String contactNumber;
+    private Integer contactDetailsForm;
     private Double latitude;
     private Double longitude;
     private String currency;

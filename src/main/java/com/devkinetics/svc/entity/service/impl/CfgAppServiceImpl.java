@@ -52,7 +52,6 @@ public class CfgAppServiceImpl implements CfgAppService {
         }
 
         Long appId = app.getPkAppId();
-        System.out.println(appId);
 
         if(appId == null)
             return createUpdateResponse(null, "Error creating cfgAppEntity", CodeUtil.CREATE_CFG_APP_ERROR, "error");

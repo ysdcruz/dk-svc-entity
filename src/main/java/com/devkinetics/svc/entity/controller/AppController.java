@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/apps")
+@RequestMapping("/v2/entity/apps")
 public class AppController {
 
     @Autowired

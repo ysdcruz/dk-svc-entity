@@ -1,0 +1,63 @@
+spring:
+  application:
+    name: dk-svc-entity
+    description:
+  profiles:
+    include: >
+      db,
+      gateway,
+      graphql
+  #  cloud:
+  #    config:
+  #      enabled: false
+  #      label: feature
+  #      uri: http://localhost:7000
+  #      username: config-server-admin
+  #      password: ${SC_CONFIG_SERVER_PASSWORD}
+  #      failFast: true
+  #      retry:
+  #        initial-interval: 3000
+  #        max-attempts: 10
+  #        max-interval: 4000
+  #        multiplier: 1.1
+  #  main:
+  #    banner-mode: 'off'
+
+server:
+  port: 3003
+
+
+context:
+  path: "/v2/entity"
+
+eureka:
+  client:
+    enabled: false
+
+
+security:
+  ignored: "**"
+  basic:
+    enabled: false
+#  oauth2:
+#    resource:
+#      filter-order: 3
+#    client:
+#      authenticationScheme: header
+
+management:
+  security:
+    enabled: false
+  health:
+    db:
+      enabled: false
+
+
+jwt:
+  auth:
+    secretKey: "xxxxx"
+
+dateFormat: yyyy-MM-dd
+# Three letter abbreviation for days
+# MON, TUE, WED... etc.
+dayFormat: E

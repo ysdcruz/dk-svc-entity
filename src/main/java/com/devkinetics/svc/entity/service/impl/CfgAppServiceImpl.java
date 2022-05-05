@@ -60,12 +60,14 @@ public class CfgAppServiceImpl implements CfgAppService {
     }
 
     @Override
-    public CreateUpdateResponse updateApp(App app) {
+    public CreateUpdateResponse updateApp(Long appId, App app) {
 
         log.info("Param: " + app.toString());
 
-        if(app.getPkAppId() == null)
+        if(appId == null)
             return createUpdateResponse(null, "Null pkAppId", CodeUtil.INVALID_PARAMETER, "error");
+
+        app.setPkAppId(appId);
 
         CfgAppResponse cfgAppResponse = this.getAppById(app.getPkAppId());
 
@@ -86,12 +88,12 @@ public class CfgAppServiceImpl implements CfgAppService {
             return createUpdateResponse(null, ex.getMessage(), CodeUtil.UPDATE_CFG_APP_ERROR, "info");
         }
 
-        Long appId = app.getPkAppId();
+        Long updateId = app.getPkAppId();
 
-        if(appId == null)
+        if(updateId == null)
             return createUpdateResponse(null, "Error updating cfgAppEntity", CodeUtil.CREATE_CFG_APP_ERROR, "error");
 
-        return createUpdateResponse(appId, "Success updating cfgAppEntity", CodeUtil.UPDATE_CFG_APP_SUCCESS, "info");
+        return createUpdateResponse(updateId, "Success updating cfgAppEntity", CodeUtil.UPDATE_CFG_APP_SUCCESS, "info");
     }
 
     @Override

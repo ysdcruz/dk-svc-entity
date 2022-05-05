@@ -11,7 +11,7 @@ public interface CfgGroupService {
     // ----------------------------------------------------------------------
 
     CreateUpdateResponse createGroup(Group group);
-    CreateUpdateResponse updateGroup(Group group);
+    CreateUpdateResponse updateGroup(Long groupId, Group group);
     CreateUpdateResponse deleteGroup(Long groupId);
 
     // ----------------------------------------------------------------------

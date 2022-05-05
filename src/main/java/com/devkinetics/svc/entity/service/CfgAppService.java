@@ -15,7 +15,7 @@ public interface CfgAppService {
     // ----------------------------------------------------------------------
 
     CreateUpdateResponse createApp(App app);
-    CreateUpdateResponse updateApp(App app);
+    CreateUpdateResponse updateApp(Long appId, App app);
     CreateUpdateResponse deleteApp(Long appId);
 
     // ----------------------------------------------------------------------

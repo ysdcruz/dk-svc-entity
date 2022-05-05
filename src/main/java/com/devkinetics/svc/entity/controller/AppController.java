@@ -25,9 +25,9 @@ public class AppController {
         return cfgAppService.createApp(app);
     }
 
-    @PutMapping
-    public CreateUpdateResponse updateApp(@RequestBody App app) {
-        return cfgAppService.updateApp(app);
+    @PutMapping("/{id}")
+    public CreateUpdateResponse updateApp(@PathVariable("id") Long appId, @RequestBody App app) {
+        return cfgAppService.updateApp(appId, app);
     }
 
     @DeleteMapping("/{id}")

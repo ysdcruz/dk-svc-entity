@@ -25,16 +25,6 @@ public class GroupController {
         return cfgGroupService.createGroup(group);
     }
 
-    @PutMapping
-    public CreateUpdateResponse updateGroup(@RequestBody Group group) {
-        return cfgGroupService.updateGroup(group);
-    }
-
-    @DeleteMapping("/{id}")
-    public CreateUpdateResponse deleteGroup(@PathVariable("id") Long groupId) {
-        return cfgGroupService.deleteGroup(groupId);
-    }
-
     @GetMapping("/{id}")
     public GroupDto getGroupByGroupId(@PathVariable("id") Long groupId) {
         return groupResolver.groupDto(groupId);
@@ -43,6 +33,16 @@ public class GroupController {
     @GetMapping
     public List<GroupDto> getAllGroups() {
         return groupResolver.listGroupDto();
+    }
+
+    @PutMapping("/{id}")
+    public CreateUpdateResponse updateGroup(@PathVariable("id") Long groupId, @RequestBody Group group) {
+        return cfgGroupService.updateGroup(groupId, group);
+    }
+
+    @DeleteMapping("/{id}")
+    public CreateUpdateResponse deleteGroup(@PathVariable("id") Long groupId) {
+        return cfgGroupService.deleteGroup(groupId);
     }
 
 }

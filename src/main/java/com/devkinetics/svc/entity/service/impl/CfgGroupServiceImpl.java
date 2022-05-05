@@ -54,12 +54,14 @@ public class CfgGroupServiceImpl implements CfgGroupService {
     }
 
     @Override
-    public CreateUpdateResponse updateGroup(Group group) {
+    public CreateUpdateResponse updateGroup(Long groupId, Group group) {
 
         log.info("Param: " + group.toString());
 
-        if(group.getPkGroupId() == null)
+        if(groupId == null)
             return createUpdateResponse(null, "Null pkGroupId", CodeUtil.INVALID_PARAMETER, "error");
+
+        group.setPkGroupId(groupId);
 
         CfgGroupResponse cfgGroupResponse = this.getGroupById(group.getPkGroupId());
 
@@ -77,12 +79,12 @@ public class CfgGroupServiceImpl implements CfgGroupService {
             return createUpdateResponse(null, ex.getMessage(), CodeUtil.UPDATE_CFG_GROUP_ERROR, "info");
         }
 
-        Long groupId = group.getPkGroupId();
+        Long updateId = group.getPkGroupId();
 
-        if(groupId == null)
+        if(updateId == null)
             return createUpdateResponse(null, "Error creating cfgGroupEntity", CodeUtil.CREATE_CFG_GROUP_ERROR, "error");
 
-        return createUpdateResponse(groupId, "Success updating cfgGroupEntity", CodeUtil.UPDATE_CFG_GROUP_SUCCESS, "info");
+        return createUpdateResponse(updateId, "Success updating cfgGroupEntity", CodeUtil.UPDATE_CFG_GROUP_SUCCESS, "info");
     }
 
     @Override

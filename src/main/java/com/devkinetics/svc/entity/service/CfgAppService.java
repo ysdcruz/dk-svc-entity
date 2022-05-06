@@ -24,6 +24,7 @@ public interface CfgAppService {
 
     CfgAppResponse getAppById(Long cfgAppId);
     CfgAppResponse getAppByMerchantId(String merchantId);
+    CfgAppResponse getAppByDomain(String domain);
     CfgAppResponse getAllApps();
 
 }

@@ -37,12 +37,17 @@ public class AppController {
 
     @GetMapping("/{id}")
     public AppDto getAppByAppId(@PathVariable("id") Long appId) {
-        return appResolver.appDto(appId, null);
+        return appResolver.appDto(appId, null, null);
     }
 
     @GetMapping("/merchant/{merchantId}")
     public AppDto getAppByMerchantId(@PathVariable("merchantId") String merchantId) {
-        return appResolver.appDto(null, merchantId);
+        return appResolver.appDto(null, merchantId, null);
+    }
+
+    @GetMapping("/domain/{domain}")
+    public AppDto getAppByDomain(@PathVariable("domain") String domain) {
+        return appResolver.appDto(null, null, domain);
     }
 
     @GetMapping

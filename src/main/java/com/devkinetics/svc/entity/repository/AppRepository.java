@@ -15,7 +15,7 @@ public interface AppRepository extends JpaRepository<App, Long> {
             "FROM cfg_app c " +
             "WHERE " +
             "?1 = ANY (string_to_array(c.domains, ',')) " +
-            "AND c.isactive IS TRUE",
+            "AND c.is_active IS TRUE",
             nativeQuery = true
     )
     App findByDomains(String domain);

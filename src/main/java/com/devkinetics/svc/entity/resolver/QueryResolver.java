@@ -26,16 +26,18 @@ public class QueryResolver implements GraphQLQueryResolver {
     @Autowired
     GroupRepository groupRepository;
 
-    public App app(Long appId, String merchantId) {
+    public App app(Long appId, String merchantId, String domains) {
         App existApp;
         String param;
 
-        log.info("id : {} | merchantId : {}", appId, merchantId);
+        log.info("id : {} | merchantId : {} | merchantId : {}", appId, merchantId, domains);
 
         if(appId != null) {
             existApp = appRepository.findById(appId).orElse(null);
         } else if(merchantId != null) {
             existApp = appRepository.findByMerchantId(merchantId);
+        } else if(domains != null) {
+            existApp = appRepository.findByDomains(domains);
         } else {
             cfgAppResponse("Null pkAppId", CodeUtil.INVALID_PARAMETER, "error");
             throw new GraphQLException("Parameter cannot be null");

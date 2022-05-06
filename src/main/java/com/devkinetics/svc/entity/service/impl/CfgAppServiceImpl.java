@@ -154,6 +154,22 @@ public class CfgAppServiceImpl implements CfgAppService {
     }
 
     @Override
+    public CfgAppResponse getAppByDomain(String domain) {
+
+        log.info("Param: " + domain);
+
+        if(domain == null)
+            return cfgAppResponse((App) null, "Null domain", CodeUtil.INVALID_PARAMETER, "error");
+
+        App app = appRepository.findByDomains(domain);
+
+        if(app == null)
+            return cfgAppResponse((App) null, "cfgAppEntity do not exist", CodeUtil.DO_NOT_EXIST_CFG_APP_ERROR, "error");
+
+        return cfgAppResponse(app, "Success retrieving cfgAppEntity", CodeUtil.RETRIEVE_CFG_APP_SUCCESS, "info");
+    }
+
+    @Override
     public CfgAppResponse getAllApps() {
         List<App> allApps = appRepository.findAll();
 

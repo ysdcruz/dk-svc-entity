@@ -10,7 +10,10 @@ type Query {
         pkAppId: ID,
 
         # Get app by merchant ID
-        merchantId: String
+        merchantId: String,
+
+        # Get app by domain
+        domains: String
 
     ): App
 

@@ -87,6 +87,17 @@ public class GraphQLApplicationTests {
     }
 
     @Test
+    public void normalTestRetrieveCfgAppDomain() throws IOException {
+        log.info("Retrieve cfgAppEntity with EXISTING domain");
+
+        String testName = "retrieveCfgAppDomain";
+
+        GraphQLResponse graphQLResponse = graphQlTestTemplate.postForResource(format(TestVariable.GRAPHQL_QUERY_REQUEST_PATH, testName));
+
+        assertEquals("Should be successful in retrieving cfgAppEntity", HttpStatus.OK, graphQLResponse.getStatusCode());
+    }
+
+    @Test
     public void normalTestUpdateCfgApp() throws IOException {
         log.info("Update cfgAppEntity with EXISTING cfgAppId");
 
@@ -198,9 +209,20 @@ public class GraphQLApplicationTests {
 
     @Test
     public void errorTestRetrieveCfgAppMerchant() throws IOException {
-        log.info("Retrieve cfgAppEntity with NON-EXISTING cfgAppMerchant");
+        log.info("Retrieve cfgAppEntity with NON-EXISTING merchantId");
 
         String testName = "retrieveCfgAppMerchantError";
+
+        GraphQLResponse graphQLResponse = graphQlTestTemplate.postForResource(format(TestVariable.GRAPHQL_QUERY_REQUEST_PATH, testName));
+
+        assertEquals("Should NOT successful in retrieving cfgAppEntity", HttpStatus.OK, graphQLResponse.getStatusCode());
+    }
+
+    @Test
+    public void errorTestRetrieveCfgAppDomain() throws IOException {
+        log.info("Retrieve cfgAppEntity with NON-EXISTING domain");
+
+        String testName = "retrieveCfgAppDomainError";
 
         GraphQLResponse graphQLResponse = graphQlTestTemplate.postForResource(format(TestVariable.GRAPHQL_QUERY_REQUEST_PATH, testName));
 

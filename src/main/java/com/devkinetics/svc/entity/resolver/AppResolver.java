@@ -43,8 +43,8 @@ public class AppResolver {
         return appMapper.listAppDto;
     }
 
-    public AppDto appDto(Long id, String merchantId) {
-        log.info("id : {} | merchantId : {}", id, merchantId);
+    public AppDto appDto(Long id, String merchantId, String domain) {
+        log.info("id : {} | merchantId : {} | domain : {}", id, merchantId, domain);
 
         CfgAppResponse cfgAppResponse = new CfgAppResponse();
 
@@ -53,6 +53,8 @@ public class AppResolver {
             cfgAppResponse = cfgAppService.getAppById(id);
         } else if(merchantId != null) {
             cfgAppResponse = cfgAppService.getAppByMerchantId(merchantId);
+        }else if(domain != null) {
+            cfgAppResponse = cfgAppService.getAppByDomain(domain);
         }
 
         // Check if error retrieving app

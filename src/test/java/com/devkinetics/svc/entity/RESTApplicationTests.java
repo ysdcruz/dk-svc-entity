@@ -27,7 +27,7 @@ import static org.junit.Assert.assertEquals;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Sql(scripts = {"classpath:schema.sql"})
 @Slf4j
-public class ApplicationTests {
+public class RESTApplicationTests {
 
     @Autowired
     private TestRestTemplate restTemplate;
@@ -62,6 +62,8 @@ public class ApplicationTests {
 
     @Test
     public void normalTestRetrieveCfgAppAll() throws URISyntaxException {
+        log.info("Retrieve ALL cfgAppEntity");
+
         String url = createURLWithPort("apps");
         URI uri = new URI(url);
 

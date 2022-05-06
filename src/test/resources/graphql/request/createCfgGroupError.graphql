@@ -1,0 +1,24 @@
+mutation createGroup {
+    createGroup(input: {
+        pkGroupId: 1
+        name: "DevKinetics Inc."
+        description: "..."
+        image: "https://image.com/124.png"
+        coverPhoto: "https://image.com/124.png"
+        contactDetailsForm: 1
+        latitude: 123.0
+        longitude: 123.0
+        isCommunity: false
+        isActive: true
+        paymentGateway1: false
+        paymentGateway2: false
+        paymentGateway3: false
+        paymentGateway4: false
+        paymentGateway5: false
+        paymentDirectBankTransferCash: false
+        paymentGateway1MinimumRegistrationFee: 1
+        paymentDirectBankTransferCashMinRegistrationFee: 1
+    }) {
+        pkGroupId
+    }
+}

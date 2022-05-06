@@ -36,7 +36,7 @@ public class AppMapper {
 
             if(app.getDomains() != null) {
                 List<String> domains = Arrays.asList(app.getDomains().split(","));
-                appDto.setDomain(domains);
+                appDto.setDomains(domains);
             }
 
             this.appDto = appDto;

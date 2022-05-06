@@ -1,0 +1,21 @@
+mutation createApp {
+    createApp(input: {
+        name: "Sports Kunekk"
+        description: "The app, the myth, and the legend"
+        email: "sports@kunekk.com"
+        facebookLink: "https://www.facebook.com/sportskunekk/"
+        copyright: "&copy; 2018 Sports Kunekk. All rights reserved."
+        appUrl: "https://demo.tickets.enablr.co/merchant/starcity/purchase-summary/"
+        paypalWebProfile: "XP-BMQA-3ZCW-BW68-8HYK"
+        merchantId: "sportskunekk"
+        isActive: true
+        domains: "staging.tickets.splashisland.ph,staging.transport.splashisland.ph"
+        iconUrl: "https://staging.tickets.splashisland.ph/assets/img/splash-island-favicon.png"
+        smtpServer: "smtp.zoho.com"
+        smtpPort: 465
+        smtpUsername: "infostaging@splashisland.ph"
+        smtpPassword: "q57A3DbXHaLp"
+    }) {
+        pkAppId
+    }
+}

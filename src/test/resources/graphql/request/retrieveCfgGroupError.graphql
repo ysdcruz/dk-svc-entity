@@ -1,0 +1,15 @@
+query group {
+    group(pkGroupId: 99999) {
+        name
+        description
+        image
+        coverPhoto
+        dialingCode
+        contactDetailsForm
+        latitude
+        longitude
+        currency
+        isCommunity
+        isActive
+    }
+}

@@ -1,0 +1,59 @@
+input GroupInput {
+
+    # Group name
+    name: String!
+
+    # Group description
+    description: String
+
+    # URL of the group's image
+    image: String
+
+    # URL of the group's cover photo
+    coverPhoto: String
+
+    # Group's dialing code
+    dialingCode: String
+
+    # Contact details of the group
+    contactDetailsForm: Int
+
+    # Group's latitude
+    latitude: Float
+
+    # Group's longitude
+    longitude: Float
+
+    # Group's currency
+    currency: String
+
+    # Whether or not the group is a community
+    isCommunity: Boolean
+
+    # Whether or not the group is active
+    isActive: Boolean
+
+    # Boolean for payment gateway 1
+    paymentGateway1: Boolean!
+
+    # Boolean for payment gateway 2
+    paymentGateway2: Boolean!
+
+    # Boolean for payment gateway 3
+    paymentGateway3: Boolean!
+
+    # Boolean for payment gateway 4
+    paymentGateway4: Boolean!
+
+    # Boolean for payment gateway 5
+    paymentGateway5: Boolean!
+
+    # Boolean for direct bank transfer
+    paymentDirectBankTransferCash: Boolean!
+
+    # Minimum registration fee for payment gateway 1
+    paymentGateway1MinimumRegistrationFee: Float
+
+    # Minimum registration fee for direct bank transfer
+    paymentDirectBankTransferCashMinRegistrationFee: Float
+}

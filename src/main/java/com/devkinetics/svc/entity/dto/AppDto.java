@@ -15,7 +15,7 @@ public class AppDto {
     private String appUrl;
     private String paypalWebProfile;
     private Boolean isActive;
-    private List<String> domain;
+    private List<String> domains;
     private String logoUrl;
     private String iconUrl;
     private String contactUsUrl;

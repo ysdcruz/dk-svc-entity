@@ -1,0 +1,9 @@
+mutation updateApp {
+    updateApp(pkAppId: 1, input: {
+        name: "Sports Kunekk"
+        email: "sports@kunekk.com"
+        appUrl: "https://demo.tickets.enablr.co/merchant/starcity/purchase-summary/"
+    }) {
+        pkAppId
+    }
+}

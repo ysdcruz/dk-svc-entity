@@ -1,0 +1,20 @@
+query app {
+    app(merchantId: "non-existing-merchant-id") {
+        name
+        description
+        email
+        facebookLink
+        twitterLink
+        appUrl
+        paypalWebProfile
+        isActive
+        domains
+        logoUrl
+        iconUrl
+        contactUsUrl
+        smtpServer
+        smtpPort
+        smtpUsername
+        smtpPassword
+    }
+}

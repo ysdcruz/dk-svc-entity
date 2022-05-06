@@ -1,0 +1,33 @@
+# The query root of DevKinetics' Entity Service GraphQL interface
+type Query {
+
+    ## APP
+
+    # Return an app
+    app(
+
+        # ID of the object
+        pkAppId: ID,
+
+        # Get app by merchant ID
+        merchantId: String
+
+    ): App
+
+    # Return all apps
+    allApps: [App]
+
+    ## GROUP
+
+    # Return a group
+    group(
+
+        # ID of the object.
+        pkGroupId: ID!
+
+    ): Group
+
+    # Return all groups
+    allGroups: [Group]
+
+}

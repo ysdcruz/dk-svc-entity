@@ -31,7 +31,7 @@ public class GraphQLController {
     @PostConstruct
     private void loadSchema(){
         GraphQLSchema schema = SchemaParser.newParser()
-                .files("graphql/App.graphqls", "graphql/Group.graphqls", "graphql/Query.graphqls", "graphql/Mutation.graphqls")
+                .files("graphql/App.graphqls", "graphql/AppInput.graphqls", "graphql/Group.graphqls", "graphql/GroupInput.graphqls", "graphql/Query.graphqls", "graphql/Mutation.graphqls")
                 .resolvers(queryResolver, mutationResolver)
                 .build()
                 .makeExecutableSchema();

@@ -16,4 +16,5 @@ public class TestVariable {
     public static final String EXISTING_CFG_APP_DOMAIN = "staging.tickets.splashisland.ph";
     public static final String NON_EXISTING_CFG_APP_DOMAIN = "non-existing-domain";
 
+    public static final String GRAPHQL_QUERY_REQUEST_PATH = "graphql/request/%s.graphql";
 }

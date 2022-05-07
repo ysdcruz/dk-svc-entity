@@ -265,7 +265,7 @@ public class GraphQLApplicationTests {
     }
 
     private String createURLWithPort() {
-        return "http://localhost:" + randomServerPort + "/v2/entity";
+        return "http://localhost:" + randomServerPort + "/graphql";
     }
 
 }

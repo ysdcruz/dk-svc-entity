@@ -274,6 +274,6 @@ public class RESTApplicationTests {
     }
 
     private String createURLWithPort(String uri) {
-        return "http://localhost:" + randomServerPort + "/v2/entity/" + uri;
+        return "http://localhost:" + randomServerPort + "/" + uri;
     }
 }

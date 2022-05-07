@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.PostConstruct;
 
 @RestController
-@RequestMapping("/v2/entity")
+@RequestMapping("/graphql")
 public class GraphQLController {
 
     @Autowired
